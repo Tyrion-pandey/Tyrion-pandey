@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HomePage">
+    <meta name="keywords" content="web Develpoer, freelancing, Web Designing">
+    <style>
+        nav{
+            position: relative;
+            width: 100vw;
+            min-height: 50px;
+        }
+        nav i{
+            position: absolute;
+            left: 0px;
+    
+        }
+        .logo{
+            position: absolute;
+            top:0px;
+            right:0px;
+            bottom: 0px;
+            border: 2px solid pink;
+            width:48px;
+            height: 48px;
+        }
+        .part-1, .about{
+            width: 99vw;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid red;
+            row-gap: 15px;
+
+        }
+        .part-1 h1{
+            color:rgb(80, 3, 80);
+            -webkit-animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+       
+        .part-1 q {
+            font-size: 25px;
+            padding: 15px;
+            animation-name: move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .part-1 iframe {
+            box-shadow: 6px 6px 5px rgb(194, 131, 221), -6px -6px 5px rgb(129, 127, 153);
+            border-radius: 10px;
+            width: 90%;
+            min-height: 350px;
+            margin: 15px;
+        }
+  .about{
+      text-align: center;
+      color: rgb(5, 31, 110);
+  }
+  .about p{
+      font-size: 20px;
+  }
+        #menu {
+            list-style-type: none;
+            width: 99vw;
+            height: fit-content;
+            text-align: center;
+            display: none;
+            background-color: whitesmoke;
+            box-shadow: 4px 4px 10px rgb(185, 185, 185), -4px -4px 10px rgb(199, 189, 189);
+            z-index: 1;
+
+        }
+
+        .sidebar a {
+            text-decoration: none;
+        }
+
+        .sidebar li {
+            background-color: chocolate;
+            color: rgb(3, 68, 68);
+            font-family: cursive;
+            margin: 10px;
+            padding: 8px;
+            font-size: 23px;
+            width: 95%;
+            box-sizing: border-box;
+        }
+        .sidebar li:hover {
+            background-color: rgb(194, 131, 221);
+            color: white;
+            cursor: pointer;
+        }
+
+        i {
+            cursor: pointer;
+            margin: 10px;
+            position: absolute;
+        }
+
+        a.close-btn {
+            margin: 100px;
+            color: black;
+            background-color: tomato;
+            font-size: 30px;
+        }
+
+        #intro {
+            font-size: 30px;
+            color: darkblue;
+            font-weight: bold;
+            display: none;
+            animation-name: move;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            animation-delay: 2s;
+            text-align: center;
+        }
+        .part-2 {
+            display: flex;
+            row-gap: 20px;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            border: 2px solid green;
+        }
+
+        .item {
+            width: 99vw;
+            background-color: lavender;
+            border: 1.5px solid rgb(66, 64, 64);
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: inset 5px 5px 5px rgb(58, 58, 129), inset -5px -5px 5px rgb(58, 58, 129);
+        }
+
+
+        .item:hover {
+            background-color: rgb(141, 209, 164);
+            transition: 0.8s;
+        }
+
+        .item button {
+            cursor: pointer;
+            background-color: rgb(59, 106, 192);
+            color: whitesmoke;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 25px;
+            margin-bottom: 0px;
+
+        }
+
+        .item button:hover {
+            transition: 0.5s;
+            background-color: teal;
+            font-size: 30px;
+            color: black;
+        }
+
+        .item img {
+            width: 100%;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .item p {
+            font-size: 22px;
+            font-family: cursive;
+            font-weight: normal;
+        }
+
+        .item h3 {
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+        .footer {
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 5px 5px 2px rgb(11, 102, 72), -5px -5px 2px rgb(41, 97, 80);
+            border: 2px solid forestgreen;
+
+        }
+
+        .footer:hover {
+            
+            transition: 0.5s;
+        }
+
+        .footer a {
+            background-color: darkgray;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+
+        .footer a:hover {
+            transition: 0.5s;
+            background-color: darkseagreen;
+            color: black;
+            font-family: cursive;
+            font-weight: normal;
+            font-size: 30px;
+        }
+        body{
+            overflow-x: hidden;
+
+        }
+
+@-webkit-keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(500px);
+            transform: translateZ(-700px) translateY(500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(500px);
+            transform: translateZ(-700px) translateY(500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+
+        @keyframes move {
+
+            25% {
+                color: rgb(80, 3, 80);
+            }
+
+            50% {
+       
+                color: rgb(0, 94, 0);
+            }
+
+            75% {
+                color: rgb(83, 83, 219);
+            }
+
+            100% {
+                color: rgb(212, 124, 9);
+            }
+
+        }
+    </style>
+
+<body>
+    <nav>
+        <i><img src="/images/menu.png" width="48px" height="48px" onclick="openmenu()"></i>
+        <img class="logo" src="/images/Suraj.gif" style="cursor: pointer;" alt="logo">
+    </nav>
+
+        <ul id="menu" class="sidebar" style="padding: 0px; display: none;">
+            <a href="javascript:void(0)" class="close-btn" onclick="closemenu()">&times;</a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+        
+    
+    <div class="part-1">
+            <h1>Hey! there!</h1>
+            <img id="me" src="images/business-3d-waving-hello-man-2.png" onmouseover="intro()" onmouseout="introut()">
+            <h4 id="intro">
+                Hello I Am Suraj Pandey.
+                Have a good Day
+            </h4>
+            <iframe src="https://www.youtube.com/embed/ueJzP-GTa2M"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        
+                <q>
+                    
+                    The More You Learn,
+                        The More You Earn.
+
+                        Keep Hustling</q>
+        </div>
+
+
+
+    
+    <hr>
+    <div class="about" id="About">
+        <img src="images/business-3d-341.png" alt="about image">
+        <h1>About Me:</h1>
+        <p>I am a web Developer, Connect with me on my social handles and let's interact with each other</p>
+    </div>
+
+    <div class="part-2">
+        <div class="item" id="item-1">
+            <img src="/images/Blogimage.jpg">
+            <h3>Blogs</h3>
+            <p>My Blogs are Based on what I have learnt so far.
+                You will find many useful blogs on Multiple Themes.
+                So, What's Holding You Back a mixture of Tech, Communication and
+                Fun awaits you. :)
+            </p>
+            <a href=""><button>Read my Blogs</button></a>
+        </div>
+        <div class="item" id="item-2">
+            <img src="/images/videoimage.jpg">
+            <h3>Videos</h3>
+            <p>I make Videos on Multiple Aspects
+                it can be Funny, Can be Informative, can be Insightful.
+                Just Trying to my Share in a World Full of Content.
+                You Might have heard "Jack of all trades, Master of None".
+            </p>
+
+            <a href=""><button>See My Videos</button></a>
+        </div>
+        <div class="item" id="item-3">
+            <img src="/images/joinimage.jpg">
+            <h3>Join Me</h3>
+            <p>Join My Community So We Share Learn and
+                Grow both as a Professional and as an Individual.
+                Together We Go Far with Ups and Down With every
+                little Challenge.
+            </p>
+            <a href="t.me/learnwithsurajpandey"><button type="button">Join Me</button></a>
+        </div>
+
+
+    </div>
+
+
+    <footer class="footer">
+        
+            <h3 style="font-size: 35px; color: rgb(54, 2, 46);">Connect With Me on:</h3>
+            <div id="fut">
+            <img src="/images/tweet.png" width="48px" height="48px"><a href="www.twitter.com">Twitter</a>
+            <img src="/images/fb.png" width="48px" height="48px"><a href="www.facebook.com">Facebook</a>
+            <img src="/images/insta.png" width="48px" height="48px"><a href="www.instagram.com">Instagram</a>
+            <img src="/images/youtube.png" width="48px" height="48px"><a href="www.youtube.com">YouTube</a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        function openmenu() {
+            document.getElementById("menu").style.display = "inline-block";
+            document.getElementById("menu").style.transition = "2s";
+
+        }
+        function closemenu() {
+            document.getElementById("menu").style.display = "none";
+        }
+        function intro() {
+            var me = document.getElementById("intro")
+            me.style.display = "block";
+            me.style.float = "left";
+        }
+        function introut() {
+            var me = document.getElementById("intro")
+            me.style.display = "none";
+        }
+    </script>
+</body>
+
+
+</head>
+
+</html>
